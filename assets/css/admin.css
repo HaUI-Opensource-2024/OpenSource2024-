@@ -1,0 +1,18 @@
+#toplevel_page_home .wp-menu-image {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: none !important;
+}
+#toplevel_page_home .wp-menu-image img {
+    width: 20px !important;
+    height: 20px !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    border-radius: 50%;
+    background-color: white;
+}
+#toplevel_page_hello-world:hover .wp-menu-image img,
+#toplevel_page_hello-world.current .wp-menu-image img {
+    opacity: 1 !important;
+}
