@@ -66,7 +66,7 @@ function welcome_screen(): void
 function admin_scripts():void
 {
     wp_enqueue_style('admin_css', PLUGIN_URL . 'assets/css/admin.css');
-    wp_enqueue_script('admin_scripts', PLUGIN_URL . 'assets/js/admin.js');
+//    wp_enqueue_script('admin_scripts', PLUGIN_URL . 'assets/js/admin_1.js');
 }
 add_action('admin_enqueue_scripts', 'admin_scripts');
 
@@ -86,7 +86,7 @@ function OS_get_option($opt, $default = '')
 
 function model_details_card()
 {
-    if (!WPWAND_OPENAI_KEY) {
+    if (!OPENAI_KEY) {
         return false;
     }
     ?>

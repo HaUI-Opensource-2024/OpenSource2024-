@@ -28,7 +28,6 @@ function settings_page()
                         <?php esc_html_e('General'); ?>
                     </a>
                 </h2>
-                <a href="https://wpwand.com/pro-plugin" target="_blank" class="get-pro-button">Get Pro Version</a>
                 <form method="post" action="options.php">
                     <?php settings_fields('settings_group'); ?>
                     <?php do_settings_sections('settings_group'); ?>
@@ -157,7 +156,7 @@ function settings_page()
                                         <div class="slider-input-wrap">
                                             <input type="number" id="wpwand_presence_penalty" name="presence_penalty"
                                                    min="0" max="2" step="0.1" class="slider_input small-text"
-                                                   value="<?php echo esc_attr(wpwand_get_option('presence_penalty', 0)); ?>" />
+                                                   value="<?php echo esc_attr(OS_get_option('presence_penalty', 0)); ?>" />
                                         </div>
                                     </td>
                                 </tr>
@@ -187,7 +186,7 @@ function settings_page()
                                     <td class="field">
                                         <input type="checkbox" id="wpwand_hide_ai_bar_gutenberg"
                                                name="hide_ai_bar_gutenberg" value="1" class="hide_ai_bar_gutenberg"
-                                            <?php checked(wpwand_get_option('hide_ai_bar_gutenberg', 0)) ?> />
+                                            <?php checked(OS_get_option('hide_ai_bar_gutenberg', 0)) ?> />
 
                                     </td>
                                 </tr>
@@ -229,4 +228,141 @@ function settings_page()
     <?php
 }
 
-// The rest of the code remains unchanged
+
+add_action('admin_init', 'register_settings');
+// Register WP Wand settings
+function register_settings(): void
+{
+    register_setting(
+        'settings_group',
+        'api_key',
+        array(
+            'type' => 'string',
+            'description' => esc_html__('OpenAI API Key'),
+            'sanitize_callback' => 'sanitize_text_field',
+            'validate_callback' => 'validate_api_key',
+        )
+    );
+
+    register_setting(
+        'settings_group',
+        'model',
+        array(
+            'type' => 'string',
+            'description' => esc_html__('Model'),
+            'sanitize_callback' => 'sanitize_text_field',
+            'validate_callback' => 'validate_model',
+        )
+    );
+
+    register_setting(
+        'settings_group',
+        'language',
+        array(
+            'type' => 'string',
+            'description' => esc_html__('Language'),
+            'sanitize_callback' => 'sanitize_text_field',
+            'validate_callback' => 'validate_model',
+        )
+    );
+    register_setting(
+        'settings_group',
+        'toggler_position',
+        array(
+            'type' => 'string',
+            'description' => esc_html__('Toggler Position' ),
+            'sanitize_callback' => 'sanitize_text_field',
+            'validate_callback' => 'validate_model',
+        )
+    );
+
+    register_setting(
+        'settings_group',
+        'temperature',
+        array(
+            'type' => 'string',
+            'description' => esc_html__('Temperature'),
+            'sanitize_callback' => 'sanitize_text_field',
+            'validate_callback' => 'validate_input_field',
+        )
+    );
+    register_setting(
+        'settings_group',
+        'frequency',
+        array(
+            'type' => 'string',
+            'description' => esc_html__('Frequency'),
+            'sanitize_callback' => 'sanitize_text_field',
+            'validate_callback' => 'validate_input_field',
+        )
+    );
+    register_setting(
+        'settings_group',
+        'max_tokens',
+        array(
+            'type' => 'string',
+            'sanitize_callback' => 'sanitize_text_field',
+            'validate_callback' => 'validate_input_field',
+        )
+    );
+    register_setting(
+        'settings_group',
+        'presence_penalty',
+        array(
+            'type' => 'string',
+            'sanitize_callback' => 'sanitize_text_field',
+            'validate_callback' => 'validate_input_field',
+        )
+    );
+    register_setting(
+        'settings_group',
+        'hide_ai_bar_gutenberg',
+        array(
+            'type' => 'string',
+            'sanitize_callback' => 'sanitize_text_field',
+            'validate_callback' => 'validate_input_field',
+        )
+    );
+
+    do_action('register_settings');
+
+}
+
+function validate_api_key($input)
+{
+    $error = false;
+
+    // Check if the input is empty
+    if (empty($input)) {
+        add_settings_error('wpwand_api_key', 'wpwand_api_key_empty', esc_html__('Please enter an OpenAI API key.'));
+        $error = true;
+    } else {
+        // Check if the input matches the expected format of an OpenAI secret key
+        if (!preg_match('/^sk-\w+$/', $input)) {
+            add_settings_error('api_key', 'api_key_invalid', esc_html__('Invalid OpenAI API key format.'));
+            $error = true;
+        }
+    }
+
+
+    // If there is an error, return the old value
+    if ($error) {
+        return OS_get_option('api_key');
+    }
+
+    return $input;
+}
+function validate_input_field($input)
+{
+    // Perform any additional validation here
+    return $input;
+}
+function validate_model($value) {
+    // Kiểm tra xem giá trị có phải là một trong các mô hình hợp lệ hay không
+    $valid_models = ['gpt-4o', 'gpt-4', 'gpt-3.5-turbo', 'gpt-3.5-turbo-16k', 'text-davinci-003', 'text-curie-001', 'text-babbage-001', 'text-ada-001'];
+    if (!in_array($value, $valid_models)) {
+        add_settings_error('model', 'invalid_model', 'The selected model is not valid.');
+        return '';
+    }
+    return $value;
+}
