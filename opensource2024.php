@@ -10,11 +10,23 @@
  * License: GPL2
 */
 
+if (is_admin()) {
+    require_once(ABSPATH . 'wp-admin/includes/plugin.php');
+    $plugin_data = get_plugin_data(__FILE__);
+    define('VERSION', $plugin_data['Version']);
+} else {
+    define('VERSION', '1.0.0'); // Định nghĩa một giá trị mặc định cho ngoài khu vực admin nếu cần
+}
+define('PLUGIN_DIR', plugin_dir_path(__FILE__));
+define('PLUGIN_URL', plugin_dir_url(__FILE__));
+define('OPENAI_KEY', get_option('api_key', false));
+require_once(PLUGIN_DIR . 'inc/admin.php');
+require_once(PLUGIN_DIR . 'inc/helper-functions.php');
 if(!class_exists("OpenSource2024_Plugin")) {
     class OpenSource2024_Plugin {
+
         public function __construct() {
             add_action('admin_menu', array($this, 'admin_menu'));
-            add_action("admin_enqueue_scripts", array($this, 'admin_enqueue_scripts'));
         }
 
         function admin_menu():void {
@@ -27,10 +39,29 @@ if(!class_exists("OpenSource2024_Plugin")) {
                 plugin_dir_url(__FILE__)."assets/images/logo.png",
                 10000
             );
+
+            add_submenu_page(
+                "home",
+                "Settings",
+                "Settings",
+                "manage_options",
+                "settings",
+                "settings_page",
+                1
+            );
         }
-        function admin_enqueue_scripts():void {
-            wp_enqueue_style("opensource2024", plugin_dir_url(__FILE__)."assets/css/admin.css");
+
+        function settings_page()
+        {
+
         }
+        function render(): void {
+            echo '<div class="wrap"><h1>Open Source 2024</h1><p>Welcome to the AI Content Generation page!</p></div>';
+        }
+
+//        function admin_enqueue_scripts():void {
+//            wp_enqueue_style("opensource2024", plugin_dir_url(__FILE__)."assets/css/admin.css");
+//        }
     }
     new OpenSource2024_Plugin();
 }

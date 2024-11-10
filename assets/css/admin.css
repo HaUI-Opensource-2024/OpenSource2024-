@@ -16,3 +16,228 @@
 #toplevel_page_hello-world.current .wp-menu-image img {
     opacity: 1 !important;
 }
+:root {
+    --brand-color: #3767FB;
+}
+
+.settings {
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+    min-height: fit-content;
+    padding-bottom: 30px;
+}
+
+.setting-page-wrap {
+    padding: 30px;
+}
+
+.settings .nav-tab-wrapper {
+    padding: 0 25px 0 !important;
+    border-bottom: 2px solid rgb(22 22 23 / 8%) !important;
+    margin: 0;
+    display: flex;
+}
+
+.settings .nav-tab {
+    background-color: unset;
+    border: none;
+    border-bottom: 1px solid transparent;
+    padding: 20px 0;
+    margin-right: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: none;
+    color: #7C838A;
+    margin-left: 0;
+    margin-bottom: -1px;
+    transition: .3s;
+    box-shadow: unset;
+    outline: none;
+    background-color: #fff !important;
+}
+
+.settings .nav-tab.nav-tab-active {
+    border-bottom-color: var(--brand-color);
+    color: #080E13;
+}
+
+.settings .tab-panel {
+    padding: 0 25px;
+}
+
+.settings .tab-panel label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 14px;
+    line-height: 20px;
+    color: #18181B;
+    position: relative;
+}
+
+.settings .tab-panel .field-desc {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #454F5C;
+    display: block;
+    margin-top: 8px;
+}
+
+.settings .tab-panel th {
+    width: 339px;
+}
+
+.settings .tab-panel input:not([type=submit]):not([type=checkbox]),
+.settings .tab-panel textarea,
+.settings .tab-panel select {
+    width: 350px;
+    height: 45px;
+    border: 1px solid #E4E4E7;
+    border-radius: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #080E13;
+    padding: 15px;
+}
+
+.api_key_status {
+    display: flex;
+    align-items: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #080E13;
+    margin-top: 10px;
+}
+
+.api_key_status svg {
+    margin-right: 5px;
+}
+
+.settings .tab-panel textarea {
+    height: 140px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.settings .tab-panel textarea::placeholder {
+    color: #7C838A;
+}
+
+.settings p.submit input[type=submit] {
+    background: var(--brand-color);
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    display: flex;
+    padding: 0 21px;
+}
+
+.settings p.submit {
+    padding: 0 25px;
+}
+
+.settings .ui-widget.ui-widget-content {
+    background: var(--brand-color);
+    height: 3px;
+    border: none;
+    box-sizing: border-box;
+    margin-right: 5px;
+}
+
+.settings .ui-slider-horizontal .ui-slider-range-max {
+    background: #EAEDF0;
+}
+
+.settings .ui-slider-horizontal .ui-slider-handle {
+    width: 16px;
+    height: 16px;
+    border: 3px solid var(--brand-color);
+    border-radius: 50%;
+    top: -6.5px;
+    box-sizing: border-box;
+}
+
+.settings .ui-state-active,
+.settings .ui-widget-content .ui-state-active,
+.settings .ui-widget-header .ui-state-active,
+a.ui-button:active,
+.settings .ui-button:active,
+.settings .ui-button.ui-state-active:hover {
+    background: var(--brand-color);
+}
+
+.settings .tab-panel input.slider_input {
+    width: 100px !important;
+}
+
+.settings .slider-input-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.settings a.get-pro-button {
+    background: #EE2626;
+    border-radius: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    display: inline-flex;
+    align-items: center;
+    text-align: right;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 9px 13px;
+    position: absolute;
+    right: 0;
+    top: 10.5px;
+    right: 10px;
+}
+
+.settings .tab-panel select {
+    padding: 0 15px;
+}
+
+.settings .tab-panel td {
+    position: relative;
+    display: flex;
+    max-width: fit-content;
+    box-sizing: border-box;
+}
+
+.settings .tab-panel span.chars-count {
+    position: absolute;
+    color: #000;
+    bottom: 20px;
+    opacity: .5;
+    font-size: 13px;
+    right: 20px;
+}
+
+.settings .tab-panel input[type=color] {
+    padding: 6px !important;
+    max-width: 100px;
+}
+
