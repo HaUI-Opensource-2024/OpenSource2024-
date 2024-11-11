@@ -8,36 +8,37 @@ on:
 
 jobs:
     build:
-        runs-on: ${{ matrix.os }}
-        strategy:
-            matrix:
-                os: [ubuntu-latest, windows-latest, macos-latest]
+        # runs-on: ${{ matrix.os }}
+        # strategy:
+        #     matrix:
+        #         os: [ubuntu-latest, windows-latest, macos-latest]
+        runs-on: ubuntu-latest
 
-        services: 
-            mysql:
-                image: mysql:5.7
-                env:
-                    MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
-                    MYSQL_USER: ${{ secrets.MYSQL_USER }}
-                    MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
-                    MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
-                ports:
-                    - 3306:3306
-                options: >-
-                    --health-cmd="mysqladmin ping"  
-                    --health-interval=10s
-                    --health-timeout=10s
-                    --health-retries=10
+        # services: 
+            # mysql:
+            #     image: mysql:5.7
+            #     env:
+            #         MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
+            #         MYSQL_USER: ${{ secrets.MYSQL_USER }}
+            #         MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+            #         MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+            #     ports:
+            #         - 3306:3306
+            #     options: >-
+            #         --health-cmd="mysqladmin ping"  
+            #         --health-interval=10s
+            #         --health-timeout=10s
+            #         --health-retries=10
 
         steps:
             - uses: actions/checkout@v2
             - name: Run the Docker image
-              run: docker-compose -f docker-compose.yml up -d
+              run: docker compose -f docker-compose.yml up -d
 
             - uses: mr-smithers-excellent/docker-build-push@v6
               name: Build & push Docker image
               with:
-                image: repo/image
+                image: hungmanhhoang/opensource2024
                 tags: v1, latest
                 registry: registry-url.io
                 dockerfile: Dockerfile.ci
