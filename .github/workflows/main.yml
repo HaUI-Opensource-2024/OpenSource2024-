@@ -40,7 +40,6 @@ jobs:
               with:
                 image: hungmanhhoang/opensource2024
                 tags: v1, latest
-                registry: registry-url.io
-                dockerfile: Dockerfile.ci
+                registry: docker.io
                 username: ${{ secrets.DOCKER_USERNAME }}
                 password: ${{ secrets.DOCKER_PASSWORD }}
