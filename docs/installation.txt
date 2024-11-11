@@ -1,0 +1,3 @@
+mkdocs new . 
+mkdocs serve 
+python3 -m pip install mkdocs-nav-weight
