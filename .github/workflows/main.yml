@@ -8,7 +8,10 @@ on:
 
 jobs:
     build:
-        runs-on: ubuntu-latest
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                os: [ubuntu-latest, windows-latest, macos-latest]
 
         services: 
             mysql:
@@ -29,21 +32,14 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - name: Run the Docker image
-              run: docker-compose up -d
+              run: docker-compose -f docker-compose.yml up -d
 
-            - name: Run the tests
-              run: |
-                # Add commands to test your application
-                echo "Testing the application"
-            
-            # Set up continuous deployment (CD)
-            - name: Push Docker images
-              run: |
-                docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-                docker-compose push hungmanhhoang/wordpress:latest
-
-            - name: Deploy to production
-              run: |
-                    # Add commands to deploy your application
-                    echo "Deploying the application"
-              
+            - uses: mr-smithers-excellent/docker-build-push@v6
+              name: Build & push Docker image
+              with:
+                image: repo/image
+                tags: v1, latest
+                registry: registry-url.io
+                dockerfile: Dockerfile.ci
+                username: ${{ secrets.DOCKER_USERNAME }}
+                password: ${{ secrets.DOCKER_PASSWORD }}
