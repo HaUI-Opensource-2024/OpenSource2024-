@@ -35,11 +35,11 @@ jobs:
             - name: Run the Docker image
               run: docker compose -f docker-compose.yml up -d
 
-            - uses: mr-smithers-excellent/docker-build-push@v6
-              name: Build & push Docker image
-              with:
-                image: hungmanhhoang/opensource2024
-                tags: v1, latest
-                registry: docker.io
-                username: ${{ secrets.DOCKER_USERNAME }}
-                password: ${{ secrets.DOCKER_PASSWORD }}
+            # - uses: mr-smithers-excellent/docker-build-push@v6
+            #   name: Build & push Docker image
+            #   with:
+            #     image: hungmanhhoang/opensource2024
+            #     tags: v1, latest
+            #     registry: docker.io
+            #     username: ${{ secrets.DOCKER_USERNAME }}
+            #     password: ${{ secrets.DOCKER_PASSWORD }}
