@@ -1,0 +1,66 @@
+site_name: Opensource Documentation
+theme:
+    name: material
+    palette: 
+
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+    features:
+        - navigation.instant
+        - navigation.instant.progress
+        - navigation.instant.preview
+        - navigation.tabs
+        - navigation.tabs.sticky
+        - navigation.expand
+        - navigation.sections
+        - navigation.top
+        - navigation.bottom
+        - toc
+        - footer
+        - sidebar
+        - code-highlight
+        - code-block-filename
+        - code-block-copy-button
+        - code-block-line-numbers
+        - code-block-clipboard
+        - code-block-copy-button  
+        - search.suggest
+        - search.highlight
+        - search.share
+        - content.code.copy
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+plugins:
+    - search
+    - mkdocs-nav-weight
+    - blog
+nav:
+    - Home: index.md
+    - Code Docs:
+        - Python: coding/python.md
+    # - Installation: 
+    #     - Linux: installation/linux.md
+    #     - Windows: installation/windows.md
+    #     - Mac: installation/mac.md  
+    - About:
+        - About Us: about/about.md
+        - Contact Us: about/contact.md
+      
