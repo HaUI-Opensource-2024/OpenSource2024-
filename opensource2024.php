@@ -6,7 +6,7 @@
  * Version: 1.0.0
  * Author:
  * Author URI:
- * Text Domain:
+ * Text Domain: HaUI
  * License: GPL2
 */
 
@@ -22,48 +22,9 @@ define('PLUGIN_URL', plugin_dir_url(__FILE__));
 define('OPENAI_KEY', get_option('api_key', false));
 require_once(PLUGIN_DIR . 'inc/admin.php');
 require_once(PLUGIN_DIR . 'inc/helper-functions.php');
-if(!class_exists("OpenSource2024_Plugin")) {
-    class OpenSource2024_Plugin {
 
-        public function __construct() {
-            add_action('admin_menu', array($this, 'admin_menu'));
-        }
-
-        function admin_menu():void {
-            add_menu_page(
-                "AI Content Generation",
-                "Open Source",
-                "manage_options",
-                "home",
-                array($this, "render"),
-                plugin_dir_url(__FILE__)."assets/images/logo.png",
-                10000
-            );
-
-            add_submenu_page(
-                "home",
-                "Settings",
-                "Settings",
-                "manage_options",
-                "settings",
-                "settings_page",
-                1
-            );
-        }
-
-        function settings_page()
-        {
-
-        }
-        function render(): void {
-            echo '<div class="wrap"><h1>Open Source 2024</h1><p>Welcome to the AI Content Generation page!</p></div>';
-        }
-
-//        function admin_enqueue_scripts():void {
-//            wp_enqueue_style("opensource2024", plugin_dir_url(__FILE__)."assets/css/admin.css");
-//        }
-    }
-    new OpenSource2024_Plugin();
+if ( !defined( 'HAUI_OPENAI_KEY' ) ) {
+    define('HAUI_OPENAI_KEY', get_option('api_key', false));
 }
 
 
