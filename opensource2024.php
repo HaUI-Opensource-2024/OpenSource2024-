@@ -6,7 +6,7 @@
  * Version: 1.0.0
  * Author:
  * Author URI:
- * Text Domain:
+ * Text Domain: HaUI
  * License: GPL2
 */
 
@@ -16,6 +16,7 @@ define( 'HAUI_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 if ( !defined( 'HAUI_OPENAI_KEY' ) ) {
     define( 'HAUI_OPENAI_KEY', get_option( 'haui_api_key', false ) );
 }
+
 define( 'HAUI_AI_CHARACTER', get_option( 'haui_ai_character', esc_html( 'Ignore all previous instructions. You are an expert in SEO copywriting and specialising in WordPress related content creation.' ) ) );
 
 function haui_init() {
