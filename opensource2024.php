@@ -10,61 +10,35 @@
  * License: GPL2
 */
 
-if (is_admin()) {
-    require_once(ABSPATH . 'wp-admin/includes/plugin.php');
-    $plugin_data = get_plugin_data(__FILE__);
-    define('VERSION', $plugin_data['Version']);
-} else {
-    define('VERSION', '1.0.0'); // Định nghĩa một giá trị mặc định cho ngoài khu vực admin nếu cần
+// Define constants
+define( 'HAUI_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'HAUI_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+if ( !defined( 'HAUI_OPENAI_KEY' ) ) {
+    define( 'HAUI_OPENAI_KEY', get_option( 'haui_api_key', false ) );
 }
-define('PLUGIN_DIR', plugin_dir_path(__FILE__));
-define('PLUGIN_URL', plugin_dir_url(__FILE__));
-define('OPENAI_KEY', get_option('api_key', false));
-require_once(PLUGIN_DIR . 'inc/admin.php');
-require_once(PLUGIN_DIR . 'inc/helper-functions.php');
-if(!class_exists("OpenSource2024_Plugin")) {
-    class OpenSource2024_Plugin {
+define( 'HAUI_AI_CHARACTER', get_option( 'haui_ai_character', esc_html( 'Ignore all previous instructions. You are an expert in SEO copywriting and specialising in WordPress related content creation.' ) ) );
 
-        public function __construct() {
-            add_action('admin_menu', array($this, 'admin_menu'));
-        }
-
-        function admin_menu():void {
-            add_menu_page(
-                "AI Content Generation",
-                "Open Source",
-                "manage_options",
-                "home",
-                array($this, "render"),
-                plugin_dir_url(__FILE__)."assets/images/logo.png",
-                10000
-            );
-
-            add_submenu_page(
-                "home",
-                "Settings",
-                "Settings",
-                "manage_options",
-                "settings",
-                "settings_page",
-                1
-            );
-        }
-
-        function settings_page()
-        {
-
-        }
-        function render(): void {
-            echo '<div class="wrap"><h1>Open Source 2024</h1><p>Welcome to the AI Content Generation page!</p></div>';
-        }
-
-//        function admin_enqueue_scripts():void {
-//            wp_enqueue_style("opensource2024", plugin_dir_url(__FILE__)."assets/css/admin.css");
-//        }
+function haui_init() {
+    // Vendor Autoload
+    if ( !class_exists( 'Orhanerday\OpenAi\OpenAi' ) ) {
+        require __DIR__ . '/vendor/orhanerday/open-ai/src/Url.php';
+        require __DIR__ . '/vendor/orhanerday/open-ai/src/OpenAi.php';
     }
-    new OpenSource2024_Plugin();
+// Include required files
+    require_once HAUI_PLUGIN_DIR . 'inc/admin.php';
+    require_once HAUI_PLUGIN_DIR . 'inc/data.php';
+    require_once HAUI_PLUGIN_DIR . 'inc/helper-functions.php';
+    require_once HAUI_PLUGIN_DIR . 'inc/frontend.php';
+    require_once HAUI_PLUGIN_DIR . 'inc/api.php';
+    require_once HAUI_PLUGIN_DIR . 'inc/gutenberg.php';
 }
 
+add_action( 'init', 'haui_init', 10 );
 
-
+/**
+ * Load plugin textdomain.
+ */
+function haui_load_plugin_textdomain() {
+    load_plugin_textdomain( 'haui', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+add_action( 'plugins_loaded', 'haui_load_plugin_textdomain' );
