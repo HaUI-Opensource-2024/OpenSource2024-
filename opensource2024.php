@@ -16,14 +16,20 @@ if (is_admin()) {
 } else {
     define('VERSION', '1.0.0'); // Định nghĩa một giá trị mặc định cho ngoài khu vực admin nếu cần
 }
+
 if ( !defined( 'PREFIX' ) ) {
     define( 'PREFIX', 'haui_' );
 }
+
 define('PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('PLUGIN_URL', plugin_dir_url(__FILE__));
 define('OPENAI_KEY', get_option('api_key', false));
 require_once(PLUGIN_DIR . 'inc/admin.php');
 require_once(PLUGIN_DIR . 'inc/helper-functions.php');
+require_once PLUGIN_DIR . 'inc/data.php';
+require_once PLUGIN_DIR . 'inc/frontend.php';
+require_once PLUGIN_DIR . 'inc/api.php';
+require_once PLUGIN_DIR . 'inc/gutenberg.php';
 
 if ( !defined( 'HAUI_OPENAI_KEY' ) ) {
     define('HAUI_OPENAI_KEY', get_option('api_key', false));
