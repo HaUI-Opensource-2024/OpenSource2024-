@@ -1,0 +1,1161 @@
+.settings .notice {
+    margin-left: 20px;
+    max-width: 60%;
+    margin-top: 10px;
+}
+
+
+.toplevel_page_main .wp-menu-image {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: none !important;
+}
+
+.toplevel_page_main .wp-menu-image img {
+    width: 20px !important;
+    height: 20px !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    border-radius: 50% !important;
+    background-color: white !important;
+}
+
+.hagen-settings .notice {
+    margin-left: 20px;
+    max-width: 60%;
+    margin-top: 10px;
+}
+
+.hagen-trigger.hagen-open {
+    position: fixed;
+    background: #3767FB;
+    top: 60px;
+    width: 56px;
+    right: 30px;
+    height: 56px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    line-height: 1;
+    color: #fff;
+    z-index: 7;
+    cursor: pointer;
+    transform: translatex(0);
+    transition: .4s;
+    border: none;
+    opacity: 1;
+    border-radius: 50%;
+}
+
+.hagen-floating * {
+    box-sizing: border-box;
+}
+
+.hagen-floating {
+    position: fixed;
+    width: 612px;
+    height: 100%;
+    background-color: #fff;
+    right: 0;
+    top: 0;
+    box-shadow: 0 0 20px 2px #00000021;
+
+    box-sizing: border-box;
+    transition: .4s;
+    transform: translatex(100%);
+    z-index: 999;
+}
+
+.admin-bar .hagen-floating {
+    padding-top: 30px;
+}
+
+button.hagen-trigger.hagen-open.active {
+    /* transform: translatex(-270px); */
+    opacity: 0;
+
+}
+
+.hagen-floating.active {
+    transform: translatex(0);
+}
+
+.hagen-floating-header {
+    background: #3767FB;
+    height: 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.hagen-floating-wraper {
+    /* display: flex; */
+    /* flex-direction: column; */
+}
+
+.hagen-floating-header h4 {
+    margin: 0;
+    display: block;
+    color: #fff;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.hagen-floating-header h4 svg {
+    margin-right: 7px;
+}
+
+.hagen-prompts-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.hagen-prompts-tabs button.hagen-tab-item {
+
+    border: none;
+    background-color: #fff;
+    transition: .3s;
+    padding: 10px;
+    border-radius: 8px 0px 0px 8px;
+    cursor: pointer;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #080E13;
+    width: 100%;
+}
+
+.hagen-prompts-tabs button.hagen-tab-item:hover,
+.hagen-prompts-tabs button.hagen-tab-item.active {
+    background: #EAEDF0;
+}
+
+button.hagen-trigger.hagen-close-button.active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translatex(-100%);
+    background: #2F55CB;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+.hagen-prompt-item {
+    padding: 10px 15px;
+}
+
+.hagen-total-templates-count span {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #454F5C;
+}
+
+.hagen-tiemplate-item {
+    padding: 15px;
+    border: 1px solid #EAEDF0;
+    margin-bottom: 10px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.hagen-tiemplate-item h4 {
+    margin: 0 0 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #080E13;
+}
+
+.hagen-tiemplate-item p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #454F5C;
+    margin: 0;
+}
+
+.hagen-tiemplate-item svg {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translatey(-50%);
+    width: 13px;
+}
+
+.hagen-prompt-form-wrap {
+    position: absolute;
+    top: 70px;
+    background-color: #fff;
+    width: 100%;
+    height: calc(100% - 70px);
+    transition: .3s;
+    left: 0;
+    padding: 0 15px;
+    box-sizing: border-box;
+    opacity: 0;
+    z-index: 5;
+    visibility: hidden;
+    overflow: auto;
+    padding-bottom: 30px;
+}
+
+.hagen-form-field label {
+    display: block;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 8px;
+}
+
+.hagen-form-field input,
+.hagen-form-field select {
+    width: 100%;
+    height: 48px;
+    border: 1px solid #EAEDF0;
+    padding: 0 16px;
+    border-radius: 8px;
+}
+
+.hagen-back-button {
+    color: #7C838A;
+    text-decoration: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 17px;
+    cursor: pointer;
+    margin-top: 16px;
+}
+
+.hagen-back-button svg {
+    margin-right: 5px;
+}
+
+h4 {}
+
+.hagen-template-details h4 {
+    margin-top: 0;
+    color: #080E13;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 6px;
+    font-weight: 699;
+}
+
+.hagen-template-details p {
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.hagen-template-details {
+    margin-bottom: 20px;
+}
+
+.hagen-form-field {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+form.hagen-prompt-form input:focus,
+form.hagen-prompt-form select:focus {
+    border: 1px solid #3767FB;
+    box-shadow: unset;
+}
+
+button.hagen-submit-button,
+a.hagen-submit-pro {
+    width: 100%;
+    display: flex;
+    background: #77C155;
+    border: none;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #FFFFFF;
+    border-radius: 8px;
+    line-height: 20px;
+}
+
+a.hagen-submit-pro {
+    background: #EE2626;
+    text-decoration: none;
+}
+
+a.hagen-submit-pro svg {
+    margin-right: 9px;
+}
+
+.hagen-form-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.hagen-form-group.hagen-col-2 .hagen-form-field {
+    /* flex: 0 0 50%; */
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.hagen-form-group.hagen-col-2 {
+    /* margin-left: -15px; */
+    /* margin-right: -15px; */
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.hagen-prompt-form-wrap.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hagen-template-list {
+    margin-top: 5px;
+}
+
+h4 {}
+
+.hagen-prompt-form-wrap>h4 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 15px;
+    color: #080E13;
+}
+
+.hagen-content {
+    padding: 15px;
+    border: 1px solid #EAEDF0;
+    border-radius: 8px;
+    margin-bottom: 15px;
+
+}
+
+.hagen-content p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* or 143% */
+;
+    color: #454F5C;
+    margin-top: 0;
+}
+
+.admin-bar button.hagen-trigger.hagen-close-button.active {
+    top: 30px;
+}
+
+.hagen-content p:last-child {
+    margin-bottom: 0;
+}
+
+.hagen-content button {
+    display: inline-flex !important;
+    float: right;
+    background: #3767FB;
+    color: #fff;
+    border: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    /* identical to box height, or 167% */
+
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+.hagen-content button sbg {
+    margin-right: 5px;
+}
+
+.hagen-content button svg {
+    margin-right: 5px;
+}
+
+.hagen-prompt-from-wrap {
+    height: calc(100vh - 169px);
+    overflow-x: auto;
+}
+
+form.hagen-prompt-form textarea {
+    width: 100%;
+
+    border: 1px solid #EAEDF0;
+    padding: 0 20px;
+    border-radius: 8px;
+}
+
+
+
+/* api missing css */
+.hagen-api-missing-notice-wrap {
+    padding: 20px;
+}
+
+.hagen-api-missing-notice {
+    background: rgba(238, 38, 38, 0.1);
+    color: #EE2626;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 4px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.hagen-form-field a {
+    color: #3767FB;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 15px;
+    display: inline-flex;
+}
+
+
+.hagen-settings {
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+    min-height: 920px;
+}
+
+.hagen-setting-page-wrap {
+    padding: 30px;
+}
+
+.hagen-settings .nav-tab-wrapper {
+    padding: 0 25px 0 !important;
+    border-bottom: 2px solid rgb(22 22 23 / 8%) !important;
+}
+
+.hagen-settings .nav-tab {
+    background-color: unset;
+    border: none;
+    border-bottom: 1px solid transparent;
+    padding: 20px 0;
+    margin-right: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #7C838A;
+    margin-left: 0;
+    margin-bottom: -1px;
+    transition: .3s;
+    box-shadow: unset;
+    outline: none;
+}
+
+.hagen-settings .nav-tab.nav-tab-active {
+    border-bottom-color: #3767FB;
+    color: #080E13;
+}
+
+.hagen-settings .tab-panel {
+    padding: 0 25px;
+}
+
+.hagen-settings .tab-panel label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #18181B;
+    position: relative;
+}
+
+.hagen-settings .tab-panel .hagen-field-desc {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    /* identical to box height, or 150% */
+;
+    color: #454F5C;
+    display: block;
+    margin-top: 8px;
+}
+
+.hagen-settings .tab-panel th {
+    width: 339px;
+}
+
+.hagen-settings .tab-panel input:not([type=submit]),
+.hagen-settings .tab-panel textarea,
+.hagen-settings .tab-panel select {
+    width: 350px;
+    height: 45px;
+    border: 1px solid #E4E4E7;
+    border-radius: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    /* Neutral/07 */
+
+    color: #080E13;
+    padding: 15px;
+}
+
+.hagen_api_key_status {
+    display: flex;
+    align-items: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    display: flex;
+    align-items: center;
+
+    /* Neutral/07 */
+
+    color: #080E13;
+    margin-top: 10px;
+}
+
+.hagen_api_key_status svg {
+    margin-right: 5px;
+}
+
+.hagen-settings .tab-panel textarea {
+    height: 140px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+}
+
+.hagen-settings .tab-panel textarea::placeholder {
+    color: #7C838A;
+}
+
+
+.hagen-settings p.submit input[type=submit] {
+    background: #3767FB;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    padding: 0 21px;
+}
+
+.hagen-settings p.submit {
+    padding: 0 25px;
+}
+
+.hagen-settings .ui-widget.ui-widget-content {
+    background: #3767FB;
+    height: 3px;
+    border: none;
+    box-sizing: border-box;
+    margin-right: 5px;
+}
+
+.hagen-settings .ui-slider-horizontal .ui-slider-range-max {
+    background: #EAEDF0;
+}
+
+.hagen-settings .ui-slider-horizontal .ui-slider-handle {
+    width: 16px;
+    height: 16px;
+    border: 3px solid #3767FB;
+    border-radius: 50%;
+    top: -6.5px;
+    box-sizing: border-box;
+}
+
+.hagen-settings .ui-state-active,
+.hagen-settings .ui-widget-content .ui-state-active,
+.hagen-settings .ui-widget-header .ui-state-active,
+a.ui-button:active,
+.hagen-settings .ui-button:active,
+.hagen-settings .ui-button.ui-state-active:hover {
+    background: #3767FB;
+}
+
+.hagen-settings .tab-panel input.hagen_slider_input {
+    width: 70px;
+}
+
+.hagen-settings .hagen-slider-input-wrap {
+    display: flex;
+    align-items: center;
+}
+
+
+/* hagen pro card  */
+
+.hagen-pro-card-wrapper {
+    width: 512px;
+    background: #FBFBFB;
+    padding: 50px 80px;
+    box-sizing: border-box;
+    text-align: center;
+    position: absolute;
+    top: 61px;
+    right: 0;
+    height: calc(100% - 61px);
+}
+
+.hagen-logo {
+    background: #3767FB;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.hagen-pro-card-header h3 {
+    /* Headline/H4 */
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    /* identical to box height, or 133% */
+
+    text-align: center;
+
+    /* Neutral/07 */
+
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #080E13;
+}
+
+.hagen-pro-card-header p {
+    /* Body/14px/Regular */
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+    /* or 143% */
+
+    text-align: center;
+    color: #2E3141;
+}
+
+.hagen-pro-card-header {
+    border-bottom: 1px solid #E1E4E7;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.hagen-pro-card-content {
+    text-align: left;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E1E4E7;
+    margin-bottom: 25px;
+}
+
+.hagen-pro-card-content ul li {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+
+    /* Neutral/07 */
+
+    color: #080E13;
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.hagen-pro-card-content ul li svg {
+    width: 15px;margin-right: 10px;
+    min-width: 15px;display: block;}
+
+.hagen-pro-prices {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    /* identical to box height, or 120% */
+
+    text-align: center;
+    letter-spacing: -1px;
+
+    /* Neutral/07 */
+
+    color: #080E13;
+}
+
+.hagen-pro-prices span.hagen-regular-price {
+    letter-spacing: -1px;
+    text-decoration-line: line-through;
+
+    /* State/Danger */
+
+    color: #EE2626;
+}
+
+.hagen-pro-card-footer p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    text-align: center;
+
+    /* Neutral/06 */
+
+    color: #2E3141;
+    margin: 11px 0 20px;
+}
+
+.hagen-pro-card-footer a {
+    display: block;
+    background: #5ACA25;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 8px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.hagen-settings a.hagen-get-pro-button {
+    background: #EE2626;
+    border-radius: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height, or 150% */
+
+    display: inline-flex;
+    align-items: center;
+    text-align: right;
+
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 9px 13px;
+    position: absolute;
+    right: 0;
+    top: 10.5px;
+    right: 10px;
+}
+
+.hagen-model-card-wrapper {
+    width: 512px;
+    background: #FBFBFB;
+    padding: 29px 49px;
+    box-sizing: border-box;
+
+    position: absolute;
+    top: 61px;
+    right: 0;
+    height: calc(100% - 61px);
+}
+
+
+.hagen-model-card-wrapper p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+    /* or 143% */
+
+
+    /* Neutral/07 */
+
+    color: #080E13;
+    margin: 0;
+}
+
+.hagen-model-card-wrapper h3 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    /* identical to box height, or 156% */
+
+
+    /* Neutral/07 */
+
+    color: #080E13;
+    margin-top: 0;
+}
+
+.hagen-model-card-wrapper h4 {
+    /* Body/14px/Bold */
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+
+    /* Neutral/07 */
+
+    color: #080E13;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+
+
+.hagen-model-card-content {
+    margin: 31px 0;
+}
+
+.hagen-model-card-content li:not(:last-child) {
+    border-bottom: 1px solid #EAEDF0;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.hagen-model-card-content ul {
+    margin: 0;
+}
+
+.hagen-logo-full {
+    margin-bottom: 30PX;
+}
+
+.hagen_api_key_status span a {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    display: inline-flex;
+    align-items: center;
+    text-decoration-line: underline;
+
+    /* Primary/Main */
+
+    color: #3767FB;
+    margin-left: 10px;
+}
+
+a.hagen-submit-pro-btn.hagen-get-pro-button {
+    position: static;
+}
+
+.hagen-tab-header {
+    width: 404px;
+}
+
+.hagen-tab-header h4 {
+    /* Body/16px/Bold */
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+
+    /* gray/900 */
+
+    color: #18181B;
+    margin-bottom: 10px;
+}
+
+.hagen-tab-header p {
+    /* Body/14px/Regular */
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: #454F5C;
+    margin-top: 0;
+}
+
+span.hagen-pro-tag {
+    background: #EE2626;
+    border-radius: 21px;
+    color: #fff;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 5px 7px;
+    margin-left: 7px;
+}
+
+.hagen-model-card {
+    display: none;
+}
+
+.hagen-settings .tab-panel select {
+    padding: 0 15px;
+}
+
+/* content animation  */
+
+.skeleton {
+    padding: 15px;
+
+    width: 100%;
+    background: #fff;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12); */
+}
+
+.skeleton .square {
+    height: 80px;
+    border-radius: 5px;
+    background: rgba(130, 130, 130, 0.2);
+    background: -webkit-gradient(linear, left top, right top, color-stop(8%, rgba(130, 130, 130, 0.2)), color-stop(18%, rgba(130, 130, 130, 0.3)), color-stop(33%, rgba(130, 130, 130, 0.2)));
+    background: linear-gradient(to right, rgba(130, 130, 130, 0.2) 8%, rgba(130, 130, 130, 0.3) 18%, rgba(130, 130, 130, 0.2) 33%);
+    background-size: 800px 100px;
+    animation: wave-squares 2s infinite ease-out;
+}
+
+.skeleton .line {
+    height: 12px;
+    margin-bottom: 6px;
+    border-radius: 2px;
+    background: rgba(130, 130, 130, 0.2);
+    background: -webkit-gradient(linear, left top, right top, color-stop(8%, rgba(130, 130, 130, 0.2)), color-stop(18%, rgba(130, 130, 130, 0.3)), color-stop(33%, rgba(130, 130, 130, 0.2)));
+    background: linear-gradient(to right, rgba(130, 130, 130, 0.2) 8%, rgba(130, 130, 130, 0.3) 18%, rgba(130, 130, 130, 0.2) 33%);
+    background-size: 800px 100px;
+    animation: wave-lines 2s infinite ease-out;
+}
+
+.skeleton-right {
+    flex: 1;
+}
+
+.skeleton-left {
+    flex: 2;
+    padding-right: 15px;
+}
+
+.flex1 {
+    flex: 1;
+}
+
+.flex2 {
+    flex: 2;
+}
+
+.skeleton .line:last-child {
+    margin-bottom: 0;
+}
+
+.h8 {
+    height: 8px !important;
+}
+
+.h10 {
+    height: 10px !important;
+}
+
+.h12 {
+    height: 12px !important;
+}
+
+.h15 {
+    height: 15px !important;
+}
+
+.h17 {
+    height: 17px !important;
+}
+
+.h20 {
+    height: 20px !important;
+}
+
+.h25 {
+    height: 25px !important;
+}
+
+.w25 {
+    width: 25% !important
+}
+
+.w40 {
+    width: 40% !important;
+}
+
+.w50 {
+    width: 50% !important
+}
+
+.w75 {
+    width: 75% !important
+}
+
+.m10 {
+    margin-bottom: 10px !important;
+}
+
+.circle {
+    border-radius: 50% !important;
+    height: 80px !important;
+    width: 80px;
+}
+
+@keyframes wave-lines {
+    0% {
+        background-position: -468px 0;
+    }
+
+    100% {
+        background-position: 468px 0;
+    }
+}
+
+@keyframes wave-squares {
+    0% {
+        background-position: -468px 0;
+    }
+
+    100% {
+        background-position: 468px 0;
+    }
+}
+
+.toplevel_page_hagen img {
+    width: 25px;
+    padding-top: 3px !important;
+    margin: 0;
+    opacity: 1!important;
+}
+
+.hagen_editor_icon button {
+    background-image: url(../img/logo.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+span.dashicon.dashicons.dashicons-hagen-pro:before {content: "Pro";}
+
+span.dashicon.dashicons.dashicons-hagen-pro:before {position: absolute;right: 0;top: 9px;box-sizing: border-box;width: auto;display: flex;align-items: center;background: #EE2626;
+    border-radius: 21px;
+    color: #fff;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 20px;
+    padding: 2px 9px;
+    margin-left: 7px;text-transform: uppercase;}
+
+button.components-button.components-dropdown-menu__menu-item.has-text.has-icon {position: relative;padding-right: 54px;}
+
+span.dashicon.dashicons.dashicons-hagen-pro {width: 0;margin: 0;}
+
+button.components-button.components-dropdown-menu__menu-item.has-text.has-icon {}
