@@ -17,10 +17,17 @@
     height: 20px !important;
     padding: 0 !important;
     opacity: 1 !important;
-    border-radius: 50%;
-    background-color: white;
+    border-radius: 50% !important;
+    background-color: white !important;
 }
-.haui-trigger.haui-open {
+
+.hagen-settings .notice {
+    margin-left: 20px;
+    max-width: 60%;
+    margin-top: 10px;
+}
+
+.hagen-trigger.hagen-open {
     position: fixed;
     background: #3767FB;
     top: 60px;
@@ -42,11 +49,11 @@
     border-radius: 50%;
 }
 
-.haui-floating * {
+.hagen-floating * {
     box-sizing: border-box;
 }
 
-.haui-floating {
+.hagen-floating {
     position: fixed;
     width: 612px;
     height: 100%;
@@ -61,21 +68,21 @@
     z-index: 999;
 }
 
-.admin-bar .haui-floating {
+.admin-bar .hagen-floating {
     padding-top: 30px;
 }
 
-button.haui-trigger.haui-open.active {
+button.hagen-trigger.hagen-open.active {
     /* transform: translatex(-270px); */
     opacity: 0;
 
 }
 
-.haui-floating.active {
+.hagen-floating.active {
     transform: translatex(0);
 }
 
-.haui-floating-header {
+.hagen-floating-header {
     background: #3767FB;
     height: 40px;
     box-sizing: border-box;
@@ -84,12 +91,12 @@ button.haui-trigger.haui-open.active {
     padding-left: 15px;
 }
 
-.haui-floating-wraper {
+.hagen-floating-wraper {
     /* display: flex; */
     /* flex-direction: column; */
 }
 
-.haui-floating-header h4 {
+.hagen-floating-header h4 {
     margin: 0;
     display: block;
     color: #fff;
@@ -102,18 +109,18 @@ button.haui-trigger.haui-open.active {
     align-items: center;
 }
 
-.haui-floating-header h4 svg {
+.hagen-floating-header h4 svg {
     margin-right: 7px;
 }
 
-.haui-prompts-tabs {
+.hagen-prompts-tabs {
     display: flex;
     flex-wrap: nowrap;
     padding: 10px;
     justify-content: space-between;
 }
 
-.haui-prompts-tabs button.haui-tab-item {
+.hagen-prompts-tabs button.hagen-tab-item {
 
     border: none;
     background-color: #fff;
@@ -130,12 +137,12 @@ button.haui-trigger.haui-open.active {
     width: 100%;
 }
 
-.haui-prompts-tabs button.haui-tab-item:hover,
-.haui-prompts-tabs button.haui-tab-item.active {
+.hagen-prompts-tabs button.hagen-tab-item:hover,
+.hagen-prompts-tabs button.hagen-tab-item.active {
     background: #EAEDF0;
 }
 
-button.haui-trigger.haui-close-button.active {
+button.hagen-trigger.hagen-close-button.active {
     position: absolute;
     top: 0;
     left: 0;
@@ -154,11 +161,11 @@ button {
 }
 
 
-.haui-prompt-item {
+.hagen-prompt-item {
     padding: 10px 15px;
 }
 
-.haui-total-templates-count span {
+.hagen-total-templates-count span {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -167,7 +174,7 @@ button {
     color: #454F5C;
 }
 
-.haui-tiemplate-item {
+.hagen-tiemplate-item {
     padding: 15px;
     border: 1px solid #EAEDF0;
     margin-bottom: 10px;
@@ -176,7 +183,7 @@ button {
     border-radius: 8px;
 }
 
-.haui-tiemplate-item h4 {
+.hagen-tiemplate-item h4 {
     margin: 0 0 5px;
     font-family: 'Inter';
     font-style: normal;
@@ -186,7 +193,7 @@ button {
     color: #080E13;
 }
 
-.haui-tiemplate-item p {
+.hagen-tiemplate-item p {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -196,7 +203,7 @@ button {
     margin: 0;
 }
 
-.haui-tiemplate-item svg {
+.hagen-tiemplate-item svg {
     position: absolute;
     top: 50%;
     right: 20px;
@@ -204,7 +211,7 @@ button {
     width: 13px;
 }
 
-.haui-prompt-form-wrap {
+.hagen-prompt-form-wrap {
     position: absolute;
     top: 70px;
     background-color: #fff;
@@ -221,7 +228,7 @@ button {
     padding-bottom: 30px;
 }
 
-.haui-form-field label {
+.hagen-form-field label {
     display: block;
     font-family: 'Inter';
     font-style: normal;
@@ -231,8 +238,8 @@ button {
     margin-bottom: 8px;
 }
 
-.haui-form-field input,
-.haui-form-field select {
+.hagen-form-field input,
+.hagen-form-field select {
     width: 100%;
     height: 48px;
     border: 1px solid #EAEDF0;
@@ -240,7 +247,7 @@ button {
     border-radius: 8px;
 }
 
-.haui-back-button {
+.hagen-back-button {
     color: #7C838A;
     text-decoration: none;
     font-family: 'Inter';
@@ -255,13 +262,13 @@ button {
     margin-top: 16px;
 }
 
-.haui-back-button svg {
+.hagen-back-button svg {
     margin-right: 5px;
 }
 
 h4 {}
 
-.haui-template-details h4 {
+.hagen-template-details h4 {
     margin-top: 0;
     color: #080E13;
     font-family: 'Inter';
@@ -273,7 +280,7 @@ h4 {}
     font-weight: 699;
 }
 
-.haui-template-details p {
+.hagen-template-details p {
     margin: 0;
     font-family: 'Inter';
     font-style: normal;
@@ -282,23 +289,23 @@ h4 {}
     line-height: 20px;
 }
 
-.haui-template-details {
+.hagen-template-details {
     margin-bottom: 20px;
 }
 
-.haui-form-field {
+.hagen-form-field {
     margin-bottom: 15px;
     width: 100%;
 }
 
-form.haui-prompt-form input:focus,
-form.haui-prompt-form select:focus {
+form.hagen-prompt-form input:focus,
+form.hagen-prompt-form select:focus {
     border: 1px solid #3767FB;
     box-shadow: unset;
 }
 
-button.haui-submit-button,
-a.haui-submit-pro {
+button.hagen-submit-button,
+a.hagen-submit-pro {
     width: 100%;
     display: flex;
     background: #77C155;
@@ -315,46 +322,46 @@ a.haui-submit-pro {
     line-height: 20px;
 }
 
-a.haui-submit-pro {
+a.hagen-submit-pro {
     background: #EE2626;
     text-decoration: none;
 }
 
-a.haui-submit-pro svg {
+a.hagen-submit-pro svg {
     margin-right: 9px;
 }
 
-.haui-form-group {
+.hagen-form-group {
     display: flex;
     flex-wrap: wrap;
 }
 
 
-.haui-form-group.haui-col-2 .haui-form-field {
+.hagen-form-group.hagen-col-2 .hagen-form-field {
     /* flex: 0 0 50%; */
     padding: 0 10px;
     box-sizing: border-box;
 }
 
-.haui-form-group.haui-col-2 {
+.hagen-form-group.hagen-col-2 {
     /* margin-left: -15px; */
     /* margin-right: -15px; */
     flex-wrap: nowrap;
     justify-content: space-between;
 }
 
-.haui-prompt-form-wrap.active {
+.hagen-prompt-form-wrap.active {
     opacity: 1;
     visibility: visible;
 }
 
-.haui-template-list {
+.hagen-template-list {
     margin-top: 5px;
 }
 
 h4 {}
 
-.haui-prompt-form-wrap>h4 {
+.hagen-prompt-form-wrap>h4 {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -364,7 +371,7 @@ h4 {}
     color: #080E13;
 }
 
-.haui-content {
+.hagen-content {
     padding: 15px;
     border: 1px solid #EAEDF0;
     border-radius: 8px;
@@ -372,7 +379,7 @@ h4 {}
 
 }
 
-.haui-content p {
+.hagen-content p {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -384,15 +391,15 @@ h4 {}
     margin-top: 0;
 }
 
-.admin-bar button.haui-trigger.haui-close-button.active {
+.admin-bar button.hagen-trigger.hagen-close-button.active {
     top: 30px;
 }
 
-.haui-content p:last-child {
+.hagen-content p:last-child {
     margin-bottom: 0;
 }
 
-.haui-content button {
+.hagen-content button {
     display: inline-flex !important;
     float: right;
     background: #3767FB;
@@ -413,20 +420,20 @@ h4 {}
     border-radius: 6px;
 }
 
-.haui-content button sbg {
+.hagen-content button sbg {
     margin-right: 5px;
 }
 
-.haui-content button svg {
+.hagen-content button svg {
     margin-right: 5px;
 }
 
-.haui-prompt-from-wrap {
+.hagen-prompt-from-wrap {
     height: calc(100vh - 169px);
     overflow-x: auto;
 }
 
-form.haui-prompt-form textarea {
+form.hagen-prompt-form textarea {
     width: 100%;
 
     border: 1px solid #EAEDF0;
@@ -437,11 +444,11 @@ form.haui-prompt-form textarea {
 
 
 /* api missing css */
-.haui-api-missing-notice-wrap {
+.hagen-api-missing-notice-wrap {
     padding: 20px;
 }
 
-.haui-api-missing-notice {
+.hagen-api-missing-notice {
     background: rgba(238, 38, 38, 0.1);
     color: #EE2626;
     font-family: 'Inter';
@@ -454,7 +461,7 @@ form.haui-prompt-form textarea {
     margin-bottom: 15px;
 }
 
-.haui-form-field a {
+.hagen-form-field a {
     color: #3767FB;
     font-family: 'Inter';
     font-style: normal;
@@ -466,23 +473,23 @@ form.haui-prompt-form textarea {
 }
 
 
-.settings {
+.hagen-settings {
     background: #fff;
     border-radius: 10px;
     position: relative;
     min-height: 920px;
 }
 
-.setting-page-wrap {
+.hagen-setting-page-wrap {
     padding: 30px;
 }
 
-.settings .nav-tab-wrapper {
+.hagen-settings .nav-tab-wrapper {
     padding: 0 25px 0 !important;
     border-bottom: 2px solid rgb(22 22 23 / 8%) !important;
 }
 
-.settings .nav-tab {
+.hagen-settings .nav-tab {
     background-color: unset;
     border: none;
     border-bottom: 1px solid transparent;
@@ -501,16 +508,16 @@ form.haui-prompt-form textarea {
     outline: none;
 }
 
-.settings .nav-tab.nav-tab-active {
+.hagen-settings .nav-tab.nav-tab-active {
     border-bottom-color: #3767FB;
     color: #080E13;
 }
 
-.settings .tab-panel {
+.hagen-settings .tab-panel {
     padding: 0 25px;
 }
 
-.settings .tab-panel label {
+.hagen-settings .tab-panel label {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -520,7 +527,7 @@ form.haui-prompt-form textarea {
     position: relative;
 }
 
-.settings .tab-panel .field-desc {
+.hagen-settings .tab-panel .hagen-field-desc {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -533,13 +540,13 @@ form.haui-prompt-form textarea {
     margin-top: 8px;
 }
 
-.settings .tab-panel th {
+.hagen-settings .tab-panel th {
     width: 339px;
 }
 
-.settings .tab-panel input:not([type=submit]),
-.settings .tab-panel textarea,
-.settings .tab-panel select {
+.hagen-settings .tab-panel input:not([type=submit]),
+.hagen-settings .tab-panel textarea,
+.hagen-settings .tab-panel select {
     width: 350px;
     height: 45px;
     border: 1px solid #E4E4E7;
@@ -558,7 +565,7 @@ form.haui-prompt-form textarea {
     padding: 15px;
 }
 
-.api_key_status {
+.hagen_api_key_status {
     display: flex;
     align-items: center;
     font-family: 'Inter';
@@ -577,11 +584,11 @@ form.haui-prompt-form textarea {
     margin-top: 10px;
 }
 
-.api_key_status svg {
+.hagen_api_key_status svg {
     margin-right: 5px;
 }
 
-.settings .tab-panel textarea {
+.hagen-settings .tab-panel textarea {
     height: 140px;
     font-family: 'Inter';
     font-style: normal;
@@ -591,12 +598,12 @@ form.haui-prompt-form textarea {
 
 }
 
-.settings .tab-panel textarea::placeholder {
+.hagen-settings .tab-panel textarea::placeholder {
     color: #7C838A;
 }
 
 
-.settings p.submit input[type=submit] {
+.hagen-settings p.submit input[type=submit] {
     background: #3767FB;
     height: 40px;
     border: none;
@@ -612,11 +619,11 @@ form.haui-prompt-form textarea {
     padding: 0 21px;
 }
 
-.settings p.submit {
+.hagen-settings p.submit {
     padding: 0 25px;
 }
 
-.settings .ui-widget.ui-widget-content {
+.hagen-settings .ui-widget.ui-widget-content {
     background: #3767FB;
     height: 3px;
     border: none;
@@ -624,11 +631,11 @@ form.haui-prompt-form textarea {
     margin-right: 5px;
 }
 
-.settings .ui-slider-horizontal .ui-slider-range-max {
+.hagen-settings .ui-slider-horizontal .ui-slider-range-max {
     background: #EAEDF0;
 }
 
-.settings .ui-slider-horizontal .ui-slider-handle {
+.hagen-settings .ui-slider-horizontal .ui-slider-handle {
     width: 16px;
     height: 16px;
     border: 3px solid #3767FB;
@@ -637,27 +644,28 @@ form.haui-prompt-form textarea {
     box-sizing: border-box;
 }
 
-.settings .ui-state-active,
-.settings .ui-widget-content .ui-state-active,
-.settings .ui-widget-header .ui-state-active,
+.hagen-settings .ui-state-active,
+.hagen-settings .ui-widget-content .ui-state-active,
+.hagen-settings .ui-widget-header .ui-state-active,
 a.ui-button:active,
-.settings .ui-button:active,
-.settings .ui-button.ui-state-active:hover {
+.hagen-settings .ui-button:active,
+.hagen-settings .ui-button.ui-state-active:hover {
     background: #3767FB;
 }
 
-.settings .tab-panel input.slider_input {
-    width: 120px;
+.hagen-settings .tab-panel input.hagen_slider_input {
+    width: 70px;
 }
 
-.settings .slider-input-wrap {
+.hagen-settings .hagen-slider-input-wrap {
     display: flex;
     align-items: center;
 }
 
 
+/* hagen pro card  */
 
-.haui-pro-card-wrapper {
+.hagen-pro-card-wrapper {
     width: 512px;
     background: #FBFBFB;
     padding: 50px 80px;
@@ -669,7 +677,7 @@ a.ui-button:active,
     height: calc(100% - 61px);
 }
 
-.haui-logo {
+.hagen-logo {
     background: #3767FB;
     width: 70px;
     height: 70px;
@@ -680,7 +688,7 @@ a.ui-button:active,
     margin-bottom: 20px;
 }
 
-.haui-pro-card-header h3 {
+.hagen-pro-card-header h3 {
     /* Headline/H4 */
 
     font-family: 'Inter';
@@ -699,7 +707,7 @@ a.ui-button:active,
     color: #080E13;
 }
 
-.haui-pro-card-header p {
+.hagen-pro-card-header p {
     /* Body/14px/Regular */
 
     font-family: 'Inter';
@@ -713,20 +721,20 @@ a.ui-button:active,
     color: #2E3141;
 }
 
-.haui-pro-card-header {
+.hagen-pro-card-header {
     border-bottom: 1px solid #E1E4E7;
     padding-bottom: 15px;
     margin-bottom: 30px;
 }
 
-.haui-pro-card-content {
+.hagen-pro-card-content {
     text-align: left;
     padding-bottom: 20px;
     border-bottom: 1px solid #E1E4E7;
     margin-bottom: 25px;
 }
 
-.haui-pro-card-content ul li {
+.hagen-pro-card-content ul li {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -743,11 +751,11 @@ a.ui-button:active,
     align-items: center;
 }
 
-.haui-pro-card-content ul li svg {
+.hagen-pro-card-content ul li svg {
     width: 15px;margin-right: 10px;
     min-width: 15px;display: block;}
 
-.haui-pro-prices {
+.hagen-pro-prices {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -763,7 +771,7 @@ a.ui-button:active,
     color: #080E13;
 }
 
-.haui-pro-prices span.haui-regular-price {
+.hagen-pro-prices span.hagen-regular-price {
     letter-spacing: -1px;
     text-decoration-line: line-through;
 
@@ -772,7 +780,7 @@ a.ui-button:active,
     color: #EE2626;
 }
 
-.haui-pro-card-footer p {
+.hagen-pro-card-footer p {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -788,7 +796,7 @@ a.ui-button:active,
     margin: 11px 0 20px;
 }
 
-.haui-pro-card-footer a {
+.hagen-pro-card-footer a {
     display: block;
     background: #5ACA25;
     height: 48px;
@@ -806,7 +814,7 @@ a.ui-button:active,
     line-height: 24px;
 }
 
-.settings a.haui-get-pro-button {
+.hagen-settings a.hagen-get-pro-button {
     background: #EE2626;
     border-radius: 8px;
     font-family: 'Inter';
@@ -829,7 +837,7 @@ a.ui-button:active,
     right: 10px;
 }
 
-.haui-model-card-wrapper {
+.hagen-model-card-wrapper {
     width: 512px;
     background: #FBFBFB;
     padding: 29px 49px;
@@ -842,7 +850,7 @@ a.ui-button:active,
 }
 
 
-.haui-model-card-wrapper p {
+.hagen-model-card-wrapper p {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 300;
@@ -857,7 +865,7 @@ a.ui-button:active,
     margin: 0;
 }
 
-.haui-model-card-wrapper h3 {
+.hagen-model-card-wrapper h3 {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -872,7 +880,7 @@ a.ui-button:active,
     margin-top: 0;
 }
 
-.haui-model-card-wrapper h4 {
+.hagen-model-card-wrapper h4 {
     /* Body/14px/Bold */
 
     font-family: 'Inter';
@@ -892,25 +900,25 @@ a.ui-button:active,
 
 
 
-.haui-model-card-content {
+.hagen-model-card-content {
     margin: 31px 0;
 }
 
-.haui-model-card-content li:not(:last-child) {
+.hagen-model-card-content li:not(:last-child) {
     border-bottom: 1px solid #EAEDF0;
     padding-bottom: 10px;
     margin-bottom: 10px;
 }
 
-.haui-model-card-content ul {
+.hagen-model-card-content ul {
     margin: 0;
 }
 
-.logo-full {
+.hagen-logo-full {
     margin-bottom: 30PX;
 }
 
-.api_key_status span a {
+.hagen_api_key_status span a {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -928,15 +936,15 @@ a.ui-button:active,
     margin-left: 10px;
 }
 
-a.haui-submit-pro-btn.haui-get-pro-button {
+a.hagen-submit-pro-btn.hagen-get-pro-button {
     position: static;
 }
 
-.haui-tab-header {
+.hagen-tab-header {
     width: 404px;
 }
 
-.haui-tab-header h4 {
+.hagen-tab-header h4 {
     /* Body/16px/Bold */
 
     font-family: 'Inter';
@@ -953,7 +961,7 @@ a.haui-submit-pro-btn.haui-get-pro-button {
     margin-bottom: 10px;
 }
 
-.haui-tab-header p {
+.hagen-tab-header p {
     /* Body/14px/Regular */
 
     font-family: 'Inter';
@@ -966,7 +974,7 @@ a.haui-submit-pro-btn.haui-get-pro-button {
     margin-top: 0;
 }
 
-span.haui-pro-tag {
+span.hagen-pro-tag {
     background: #EE2626;
     border-radius: 21px;
     color: #fff;
@@ -979,11 +987,11 @@ span.haui-pro-tag {
     margin-left: 7px;
 }
 
-.haui-model-card {
+.hagen-model-card {
     display: none;
 }
 
-.settings .tab-panel select {
+.hagen-settings .tab-panel select {
     padding: 0 15px;
 }
 
@@ -1118,14 +1126,14 @@ span.haui-pro-tag {
     }
 }
 
-.toplevel_page_haui img {
+.toplevel_page_hagen img {
     width: 25px;
     padding-top: 3px !important;
     margin: 0;
     opacity: 1!important;
 }
 
-.haui_editor_icon button {
+.hagen_editor_icon button {
     background-image: url(../img/logo.png);
     background-size: contain;
     background-position: center;
@@ -1133,9 +1141,9 @@ span.haui-pro-tag {
 }
 
 
-span.dashicon.dashicons.dashicons-haui-pro:before {content: "Pro";}
+span.dashicon.dashicons.dashicons-hagen-pro:before {content: "Pro";}
 
-span.dashicon.dashicons.dashicons-haui-pro:before {position: absolute;right: 0;top: 9px;box-sizing: border-box;width: auto;display: flex;align-items: center;background: #EE2626;
+span.dashicon.dashicons.dashicons-hagen-pro:before {position: absolute;right: 0;top: 9px;box-sizing: border-box;width: auto;display: flex;align-items: center;background: #EE2626;
     border-radius: 21px;
     color: #fff;
     font-family: 'Inter';
@@ -1148,6 +1156,6 @@ span.dashicon.dashicons.dashicons-haui-pro:before {position: absolute;right: 0;t
 
 button.components-button.components-dropdown-menu__menu-item.has-text.has-icon {position: relative;padding-right: 54px;}
 
-span.dashicon.dashicons.dashicons-haui-pro {width: 0;margin: 0;}
+span.dashicon.dashicons.dashicons-hagen-pro {width: 0;margin: 0;}
 
 button.components-button.components-dropdown-menu__menu-item.has-text.has-icon {}
