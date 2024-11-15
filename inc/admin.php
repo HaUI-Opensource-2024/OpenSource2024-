@@ -168,13 +168,17 @@ function hagen_settings_page() {
 }
 
 function hagen_register_menu() {
-    add_menu_page( 'Hagen', 'Hagen', 'manage_options', 'hagen', '', HAGEN_PLUGIN_URL . 'assets/images/logo.png' );
+    add_menu_page( 'Hagen', 'Hagen', 'manage_options', 'hagen', '', HAGEN_PLUGIN_URL.'assets/images/logo.png' );
     add_submenu_page( 'hagen', 'Hagen', 'Settings', 'manage_options', 'hagen', 'hagen_settings_page' );
+
 }
-
 add_action( 'admin_menu', 'hagen_register_menu' );
-
+function hagen_enqueue_admin_styles($hook) {
+    wp_enqueue_style('hagen-admin-styles', HAGEN_PLUGIN_URL . 'assets/css/admin.css', array(), '1.0.0');
+}
+add_action('admin_enqueue_scripts', 'hagen_enqueue_admin_styles');
 add_action( 'admin_init', 'hagen_register_settings' );
+
 
 // Register Hagen settings
 function hagen_register_settings() {
