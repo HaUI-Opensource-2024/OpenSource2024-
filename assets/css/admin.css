@@ -29,11 +29,11 @@
 
 .hagen-trigger.hagen-open {
     position: fixed;
-    background: #3767FB;
+    background: #76c0fc;
     top: 60px;
-    width: 56px;
+    width: 50px;
     right: 30px;
-    height: 56px;
+    height: 50px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -47,6 +47,12 @@
     border: none;
     opacity: 1;
     border-radius: 50%;
+    margin: 10px;
+}
+
+.logo{
+    width: 35px;
+    height: 35px;
 }
 
 .hagen-floating * {
@@ -83,7 +89,7 @@ button.hagen-trigger.hagen-open.active {
 }
 
 .hagen-floating-header {
-    background: #3767FB;
+    background: #76c0fc;
     height: 40px;
     box-sizing: border-box;
     display: flex;
@@ -107,6 +113,7 @@ button.hagen-trigger.hagen-open.active {
     line-height: 24px;
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .hagen-floating-header h4 svg {
@@ -147,13 +154,14 @@ button.hagen-trigger.hagen-close-button.active {
     top: 0;
     left: 0;
     transform: translatex(-100%);
-    background: #2F55CB;
+    background: #76c0fc;
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
+    border-right: 1px solid #fff;
 }
 
 button {
